@@ -1,0 +1,597 @@
+.logo1{
+    color: #247CC0;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.wrapper {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.logo {
+    transform: translateY(33%);
+}
+
+nav {
+    width: 874px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    padding: 4px;
+    margin-left: 150px;
+    outline: none;
+}
+
+nav a {
+    margin: 10px;
+    padding: 5px; 
+    font-size: 17px; 
+    color: Black; 
+    text-align: center; 
+    border: 0px; 
+    cursor: pointer; 
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(255, 255, 255);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover, nav a.bb {
+    color: #247CC0; 
+    outline: none;
+}
+
+.scale {
+    transition: 0.1s;
+}
+
+.scale:hover {
+    transform: scale(1.3);
+}
+
+.col {
+    width: 50%;
+    float: left;
+}
+
+.cone {
+    float: left;
+}
+
+.cones {
+    margin-top: 60px;
+    height: 450px;
+}
+
+.ctwo {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1024px; 
+}
+
+.ctwos{
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    margin-top: 50px;
+}
+
+.ctwoss{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+.bluein {
+    width: 824px;
+    height: 50px;
+    background: silver;
+    color: #49423d;
+    border: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.one {
+    text-align: right;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.onep{
+    text-align: right;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+footer {
+    background-color: #247CC0;
+}
+
+.wrappers {
+    width: 1024px;
+    margin: 0 auto;
+    color: white;
+    margin-top: 50px;
+}
+
+.fone {
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    padding-top: 30px;
+}
+
+.button {
+    border-radius: 4px;
+    background-color: #247CC0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+    width: 170px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.button:hover span {
+    padding-right: 25px;
+}
+  
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/* Собственно сам слайдер */
+.slider{
+    max-width: 100%;
+    position: relative;
+    
+    height: 300px;
+    margin-bottom: 130px;
+    margin: auto;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+/* Кнопки вперед и назад */
+.slider .prev, .slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* При наведении на кнопки добавляем фон кнопок */
+
+.slider .prev:hover,
+.slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Заголовок слайда */
+.slideText {
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* Выравнивание текста по горизонтали и по вертикали*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Тень*/
+    text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+}
+
+/* Кружочки */
+
+.slider-dots {
+  text-align: center;
+ 
+}
+
+.slider-dots_item{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.slider-dots_item:hover {
+    background-color: #aaa;
+}
+
+/* Анимация слайдов */
+
+.slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+    width: 341px;
+    text-align: left;
+    font-size: 20px;
+}
+
+td {
+    font-size: 15px;
+}
+
+.onet{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+.buttons {
+    position: relative;
+    background-color: #247CC0;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttons:after {
+    content: "";
+    background: #247CC0;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.buttons:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.opros{
+    display: flex;
+}
+
+.bft{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bft a {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+.bft a:hover, .bft a.bbb {
+    color: black; 
+    outline: none;
+}
+
+.poiskhh{
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #247CC0;
+}
+
+.intl{
+    text-align: center;
+}
+
+.textInp {
+    width: 200px;
+    height: 30px;
+    background: white;
+    border: 1px solid #247CC0;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.textInp:active {
+    width: 200px;
+    height: 30px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.voit {
+    margin-top: 30px;
+    position: relative;
+    background-color: #247CC0;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.voit:after {
+    content: "";
+    background: #247CC0;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.voit:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.voits{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.voits a{
+    color: #247CC0;
+}
+
+.voits a:hover{
+    font-weight: bold;
+}
+
+.voitr {
+    margin-top: 30px;
+    position: relative;
+    background-color: #247CC0;
+    border: none;
+    font-size: 15px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+}
+
+.voitr:after {
+    content: "";
+    background: #247CC0;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.voitr:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.tov{
+    background: white;
+    color: black;
+    box-shadow: 0 0 10px #444;
+    border-radius: 10px;
+    width: 1024px;
+    margin-right: auto;
+    margin-left: auto;
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    margin-top: 20px;
+}
+
+.tovimg{
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 50px;
+    float: left;
+}
+
+.tovimgn{
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-bottom: 25px;
+    padding-right: 50px;
+    float: left;
+}
+
+.tovim{
+    padding-top: 15px;
+    float: left;
+}
+
+.tovimh {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.tovimh:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color: #247CC0;
+}
+
+.tovimp {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.cont{
+    height: 1000px;
+}
+
+.tovin{
+    padding-right: 15px;
+    text-align: right;
+}
+
+.tovinh{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    padding-right: 20px;
+    padding-top: 45px;
+}
+
+.tovinb{
+    padding-top: 15px;
+}
+
+.buttonp {
+    border-radius: 4px;
+    background-color: #247CC0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+    width: 170px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.buttonp span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.buttonp span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.buttonp:hover span {
+    padding-right: 25px;
+}
+  
+.buttonp:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.emailll{
+    margin-top: 25px;
+}
